@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+
+        {
+            // there are three ways to declare a variable in javascript
+            // var, let, const, they are keywords
+            var a = 50;
+            var a = 100;
+            console.log(a);
+            let b = 10;
+            b = 20;
+            console.log(b);
+            const c = 5;
+            console.log(c);
+        }
+
+        {
+            // there are seven types of datatypes in js
+            // Number, String, undefined, null, boolean, symbol, bigint
+        }
+
+        {
+            // there are 3 types of '=' used in js
+            // = ->assignment operator 
+            // == -> comparison operator, but his only compares the value
+            // === -> strict comparison operator, this compares both value and datatype
+
+            //console.log(5=5); //gives error
+            console.log(5 == 5); //gives true
+            console.log(5 == '5'); //gives true as it only compares value
+            console.log(5 === '5'); //gives false as it compares both value and datatype
+        }
+
+
+        {
+            let userName = "Avni"
+            let lastName = "Diwan";
+            console.log(userName + lastName); //string concatenation
+            console.log(userName + " " + lastName); //string concatenation
+            console.log(`My name is ${userName} ${lastName}`); //template string
+        }
+
+        {
+            let a = true;
+            //1st case
+            if (a) {
+                console.log("hii")
+            }
+            else {
+                console.log("bye")
+            }
+
+            //2nd case
+            if (0) {
+                console.log("hii");
+            }
+            else {
+                console.log("bye")
+            }
+
+            //3rd case
+            if (a = true) {
+                console.log("hii");
+            }
+            else {
+                console.log("bye")
+            }
+
+            //terniary operator
+            a ? console.log("hello") : console.log("hi");
+        }
+
+
+        {
+            //Nonprimitive datatypes-> 1.ARRAY 2.OBJECT
+            let arr = []; //using the square bracket declares the array
+            let obj = {}; //using the curly bracket declares the object
+
+            //ARRAY
+            arr = [1, 2, 3, true, false, "hello", "hii"];
+            console.log(arr);
+            console.log(arr[0]);
+            console.log(arr[arr.length - 1]);
+
+
+            //OBJECT
+            let student = {
+                name: "Avni", rollNo: 123
+            }
+            console.log(student);
+            console.log(student.name); //to access any key of object 
+        }
+
+        {
+            //FUNCTIONS
+            //1.using keyword
+            // function sum() {
+            //     console.log("hehehehee");
+            // }
+            // sum();
+
+
+            //using arrow function
+            let SUM = (e, f) => { //values received are called parameters
+                console.log(e + f);
+            }
+            SUM(5, 6) //values passed are called arguments
+        }
+
+        {
+            //function keyword
+            function countVow(str) {
+                let count = 0;
+                for (let i of str) {
+                    if (i == 'a' || i == 'e' || i == 'i' || i == 'o' || i == 'u' || i == 'A' || i == 'E' || i == 'I' || i == 'O' || i == 'U') {
+                        count++;
+                    }
+                }
+                console.log(count);
+            }
+
+
+            //Arrow function
+            let countVowel = (str) => {
+                let count = 0;
+                for (let i of str) {
+                    if (i == 'a' || i == 'e' || i == 'i' || i == 'o' || i == 'u' || i == 'A' || i == 'E' || i == 'I' || i == 'O' || i == 'U') {
+                        count++;
+                    }
+                }
+                return count;
+            };
+        }
+
+
+        {
+            //Types of loop otherthan for,while,dowhile
+            //FOR-IN
+            let arr = [1, 2, 3, 4, 5, 6]
+            for (let i in arr) {
+                console.log(i); //by default for-in loop return the index number
+            }
+
+            //FOR-OF
+            for (let i of arr) {
+                console.log(i); //by default for-of loop return the value at that index
+            }
+        }
+
+        {
+            // BUILT-IN METHODS
+
+            //1. FOR-EACH
+            // here 'a' represent the value at the index, 'b' represent the index number, and 'c' represent the whole array 
+            //forEach return datatype is undefined and 
+            let arr = [1, 2, 3, 4, 5, 6]
+            let data1 = arr.forEach(function (a, b, c) {
+                return a;
+            })
+            console.log(data1);
+
+            //2. MAP
+            // here 'a' represent the value at the index, 'b' represent the index number, and 'c' represent the whole array 
+            //map return the value by storing it in a new array
+            //if you use comparison operator in map it will return the values in boolean, but not return the values of arr
+            arr = [1, 2, 3, 4, 5, 6]
+            let data2 = arr.map(function (a, b, c) {
+                return a;
+            })
+            console.log(data2)
+
+            //3. FILTER
+            //it also return a new array consisting true condition values
+            arr = [1, 2, 3, 4, 5, 6]
+            let data3 = arr.filter(function (a, b, c) {
+                return a % 2 == 0
+            })
+            console.log(data3)
+
+            //4. FIND
+            //return the single value, and stops iterating the array when for once the condition becomes true
+
+
+            //ques declare an arr then filter the values greater than 2 and then filter the even values
+            let arr1 = [5, 2, 1, -1, -5, -3, 7, 90, -78, -536, -78, 67, 32, 353]
+            let greater = arr1.filter(function (a, b, c) {
+                return a > 2
+            })
+            let even = greater.filter(function (a, b, c) {
+                return a % 2 == 0
+            })
+            console.log(even);
+
+
+            //ques have an array, find no greater than 2, then find numbers who are even and then calculate the sum of the numbers
+            let arr2 = [1, 2, 3, 4, 5, 64, 3, 5, 2, 5, 2, 34]
+            let g = arr2.filter(function (a, b, c) {
+                return a > 2
+            })
+            let even2 = g.filter(function (a, b, c) {
+                return a % 2 == 0
+            })
+            let calSum = even2.reduce(function (a, b, c, d) {
+                return a + b
+            })
+            console.log(calSum)
+        }
+
+        {
+            //sorting of array
+            let arr = [1, 2, 3, 4, 5, 64, 3, 5, 2, 5, 2, 34]
+            let data = arr.sort((a, b) => {       //function is written in arrow function format
+                return a - b
+            })
+        }
+
+
+
+        {
+            //OBJECT
+            let obj = {
+                id: 1,
+                name: "Avni",
+                sum: function () {
+                    console.log("hehee")
+                }
+            }
+            obj.sum();
+            console.log(obj.name);
+        }
+
+
+        {    //GEC-> global execution context
+            //it has 2 phases, memory creation and code execution
+            //LEC-> local execution context
+        }
+
+        {
+            //different types of function calls
+            //1. with function keyword
+            function sum1() {
+                console.log("hii");
+            }
+            sum1();
+            //2.arrow function
+            var sum2 = () => {
+                console.log("hii")
+            }
+            sum2();
+            //3.
+            var sum3 = function () {
+                console.log("hii")
+            }
+            sum3();
+        }
+
+        {
+            //the function which always give the same value on calling them one or multiple times are called pure function
+            //the function which give different value on calling are called impure function
+            var a = 5;
+            function sum() {
+                a += 5;
+                return a;
+            }
+            console.log(sum());
+            console.log(sum());
+            console.log(sum()); //impure function
+        }
+
+
+        {
+            //the let and const cannot be accessed outside of scope
+            // but var can be accessed outside of scope
+            let a = 5
+            {
+                let a = 10;
+                console.log(a);
+            }
+            console.log(a)
+
+            const b = 5
+            {
+                const b = 10;
+                console.log(b);
+            }
+            console.log(b)
+
+            var c = 5
+            {
+                var c = 10;
+                console.log(c);
+            }
+            console.log(c)
+
+        }
+
+        // function sum(){
+        //     var a=5
+        // }
+        // console.log(a); 
+        // this gives error of a is not defined with all the keywords var, let, const
+
+        {
+            //methods-> 1.push 2.pop 3.shift 4.unshift
+            let arr = [1, 3, 4, 6, 78, 89]
+            arr.push(90)
+            console.log(arr)
+            arr.pop()
+            console.log(arr)
+            arr.shift();
+            console.log(arr)
+            arr.unshift(90)
+            console.log(arr)
+        }
+
+
+        {
+            // higher order function-> the type of function which returns another function or the function which receives the another function in its argument
+            function outer() {
+                function inner() {
+                    console.log("INNERRRR")
+                }
+                return inner
+            }
+            let a = outer();
+            a();
+        }
+
+
+        {
+            //ques: check the 
+            let arr = [2, "hello", true];
+            var numArr = [], strArr = [], boolArr = []
+            for (let i of arr) {
+                if (typeof i == "number") {
+                    numArr.push(i)
+                }
+                else if (typeof i == "string") {
+                    strArr.push(i)
+                }
+                else if (typeof i == "boolean") {
+                    boolArr.push(i)
+                }
+            }
+            console.log(numArr)
+            console.log(strArr)
+            console.log(boolArr)
+
+            //its optimized version
+            function getString(i) {
+                return typeof i == "string"
+            }
+            function getNumber(i) {
+                return typeof i == "number"
+            }
+            function getBool(i) {
+                return typeof i == "boolean"
+            }
+            function getvalues(arr, fn) {
+                let res = []
+                for (let i of arr) {
+                    if (fn(i))
+                        res.push(i)
+                }
+                return res;
+            }
+            console.log(getvalues(arr, getString))
+            console.log(getvalues(arr, getNumber))
+            console.log(getvalues(arr, getBool))
+        }
+
+
+        {
+            //set timeout and set interval
+            // setTimeout(()=>{
+            //     console.log("avni")
+            // },1000)
+
+            // setInterval(()=>{
+            //     console.log("diwan")
+            // },3000)
+
+
+            // for(let i=1; i<=5; i++){
+            //     setTimeout(()=>{
+            //         console.log(i)
+            //     },1000*i)
+            // }
+            //doing the same with different keywords (let/var) gives different output
+            // for(var i=1; i<=5; i++){
+            //     setTimeout(()=>{
+            //         console.log(i)
+            //     },1000*i)
+            // }
+        }
+
+        {
+            //this keyword
+            console.log(window) //it is a global object
+            console.log(this) //this keyword points to the window object, if it is not written inside any method
+
+            //this keyword does not work for arrow function 
+            //and it will work fine in case of normal function
+
+            //if this keyword is written inside any function it will refer to the parent parent object
+
+            {
+                a = 5;
+                let obj2 = {
+                    a: 10,
+                    sum5: function () {
+                        console.log(this.a)
+                    },
+                    id: 1,
+                    name: "hello"
+                }
+                //this will result a=10 as it will point obj 
+            }
+
+            {
+                a = 5;
+                let obj2 = {
+                    a: 10,
+                    sum5: () => {
+                        console.log(this.a)
+                    },
+                    id: 1,
+                    name: "hello"
+                }
+                //this will result a=5 as it will point to the window a global object
+            }
+        }
+
+
+        {
+            //map function made using prototype
+            let arr = [1, 2, 3, 4, 5, 6, 7]
+            Array.prototype.myMap = function (callback) {
+                let res = []
+                for (let i = 0; i < this.length; i++) {
+                    res.push(this[i])
+                }
+                return res
+            }
+
+            let data = arr.myMap((a, b, c) => {
+                return a;
+            })
+            console.log(data)
+        }
+
+        {
+            //filter function made using prototype
+            let arr = [1, 2, 3, 4, 5, 6, 7]
+            Array.prototype.myFilter = function (callback) {
+                let res = []
+                for (let i = 0; i < this.length; i++) {
+                    if (this[i], i, this) {
+                        res.push(this[i])
+                    }
+                }
+                return res
+            }
+
+            let data = arr.myFilter((a, b, c) => {
+                return a > 2;
+            })
+            console.log(data)
+        }
+
+        {
+            //webAPI, callstack, callback queue, eventloop 
+        }
+
+        {
+            //code to check the working of settimeout function
+            function step1() {
+                setTimeout(() => {
+                    console.log("select photo");
+                }, 5000)
+            }
+            function step2() {
+                setTimeout(() => {
+                    console.log("add filter");
+                }, 4000)
+            }
+            function step3() {
+                setTimeout(() => {
+                    console.log("add caption");
+                }, 3000)
+            }
+            function step4() {
+                setTimeout(() => {
+                    console.log("post");
+                }, 2000)
+            }
+            //     step1() 
+            //     step2() 
+            //     step3() 
+            //     step4()
+        }
+
+        {
+            //CALLBACK HELL
+            function step1(fn) {
+                setTimeout(() => {
+                    console.log("select photo");
+                    fn()
+                }, 4000)
+
+            }
+            function step2(fn) {
+                setTimeout(() => {
+                    console.log("add filter");
+                    fn()
+                }, 3000)
+
+            }
+            function step3(fn) {
+                setTimeout(() => {
+                    console.log("add caption");
+                    fn()
+                }, 2000)
+
+            }
+            function step4(fn) {
+                setTimeout(() => {
+                    console.log("post");
+                    fn()
+                }, 1000)
+            }
+
+            // step1(() => {
+            //     step2(() => {
+            //         step3(() => {
+            //             step4()
+            //         })
+            //     })
+            // })
+        }
+
+        {
+            //PROMISES
+            //creating of promise
+            let promise1 = new Promise((resolve, reject) => {
+                resolve() //this will make to state-> fulfilled
+                //reject() the state will be rejected
+                //and if no parameter is called then the state will be pending
+            })
+            console.log(promise1);
+
+
+            let promise2 = new Promise((res, rej) => {
+                let a = true
+                if (a)
+                    res()
+                else
+                    rej()
+            })
+            console.log(promise2)
+
+            //then and catch keyword works similar to if-else 
+            promise1.then(() => {
+                console.log("hello")
+            }).catch(() => {
+
+            })
+
+
+            //tackling the instagram post problem using PROMISES
+            let step1 = function () {
+                return new Promise((res, rej) => {
+                    setTimeout(() => {
+                        res()
+                        console.log("select photo")
+                    }, 2000)
+                })
+            }
+            let step2 = function () {
+                return new Promise((res, rej) => {
+                    setTimeout(() => {
+                        res()
+                        console.log("add filter")
+                    }, 2000)
+                })
+            }
+            let step3 = function () {
+                return new Promise((res, rej) => {
+                    setTimeout(() => {
+                        res()
+                        console.log("add caption")
+                    }, 2000)
+                })
+            }
+            let step4 = function () {
+                return new Promise((res, rej) => {
+                    setTimeout(() => {
+                        res()
+                        console.log("posted successfullyyy")
+                    }, 2000)
+                })
+            }
+            // step1().then(() => {
+            //     return step2().then(() => {
+            //         return step3().then(() => {
+            //             return step4().then(() => {
+            //             })
+            //         })
+            //     })
+            // })
+        }
+
+        {
+            //ASYNC AWAITS
+            //tackling the instagram post problem using async awaits
+            let step1 = function () {
+                return new Promise((res, rej) => {
+                    setTimeout(() => {
+                        res()
+                        console.log("select photo")
+                    }, 2000)
+                })
+            }
+            let step2 = function () {
+                return new Promise((res, rej) => {
+                    setTimeout(() => {
+                        res()
+                        console.log("add filter")
+                    }, 2000)
+                })
+            }
+            let step3 = function () {
+                return new Promise((res, rej) => {
+                    setTimeout(() => {
+                        res()
+                        console.log("add caption")
+                    }, 2000)
+                })
+            }
+            let step4 = function () {
+                return new Promise((res, rej) => {
+                    setTimeout(() => {
+                        res()
+                        console.log("posted successfullyyy")
+                    }, 2000)
+                })
+            }
+            async function call() {
+                await step1()
+                await step2()
+                await step3()
+                await step4()
+            }
+            call()
+        }
+
+        
+
+    </script>
+</body>
+
+</html>
