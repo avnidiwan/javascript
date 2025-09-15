@@ -1,0 +1,9 @@
+const location=document.querySelector("input");
+const button=document.querySelector("button");
+const dayDate=document.getElementById("day-date");
+const cityName=document.getElementById("city-name");
+const weatherImg=document.getElementById("weather-img");
+const weatherDisc=document.getElementById("weather-disc");
+const temp=document.getElementById("temp");
+const wind=document.getElementById("wind");
+const humadity=document.getElementById("humadity");
