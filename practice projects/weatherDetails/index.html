@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="weather.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
+
 <body>
     <div id="screen">
-        <div><input type="search" placeholder="Enter the city name"><button><i class="fa-solid fa-magnifying-glass"></i></button></div>
-        
+        <div ><img id="cloud1" src="/practice projects/weatherDetails/cloud.png"></div>
+        <div ><img id="cloud4" src="/practice projects/weatherDetails/cloud.png"></div>
+        <div ><img id="cloud2" src="/practice projects/weatherDetails/cloud.png"></div>
+        <div ><img id="cloud3" src="/practice projects/weatherDetails/cloud.png"></div>
+
+        <div><input type="search" placeholder="Enter the city name"><button><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
         <div id="centerbox">
-            <p id="day-date">Wednesday, 28 April</p>
-            <p id="city-name"> Jabalpur</p>
+            <!-- <p id="day-date">Wednesday, 28 April</p> -->
+            <p id="city-name"></p>
             <br>
-            <div id="weather-img"> </div>
+            <div id="weather-img-container"> <img class="weather-img" src="" alt="Weather Icon">
+            </div>
+            <br>
             <p id="weather-disc"></p>
-            <p id="temp"> </p>
-            <div> <span id="wind"></span><span id="humadity"></span></div>
+            <p id="temp"></p>
+
+            <div id="more-detail">
+                <span><img id="wind-img" src="/practice projects/weatherDetails/wind.png">
+                    <p id="wind"></p>
+                </span>
+                <span> <img id="hum-img" src="/practice projects/weatherDetails/humadity.png">
+                    <p id="humadity"></p>
+                </span>
+            </div>
         </div>
     </div>
+
+    <script src="weather.js"></script>
 </body>
+
 </html>
