@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <p id="heading">To-Do List</p>
+    <div id="taskarea">
+        <div id="addtask"><input id="text" type="search" placeholder="enter your tasks!"><button id="add"
+                type="submit">ADD TASK</button></div>
+        <div id="counts">
+            <span>Total:</span><span id="totcount">0</span>
+            <pre>  |  </pre><span>Completed:</span><span id="compcount"></span>
+            <pre>  |  </pre><span>Pending:</span><span id="pendcount"></span>
+
+        </div>
+        <!-- <div id="searcharea"><input id="search" type="search" placeholder="Search your task"><button id="search"
+                type="submit">SEARCH</button></div> -->
+        <div id="list"></div>
+
+    </div>
+    <script src="todoList.js"></script>
+</body>
+
+</html>
