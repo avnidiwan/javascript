@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Download Bar</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #fff7f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .progress-container {
+            width: 250px;
+            background-color: #ffdede;
+            border-radius: 20px;
+            height: 25px;
+            overflow: hidden;
+            box-shadow: inset 0 0 5px #ffa6a6;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, rgb(255, 229, 231),rgb(255, 178, 191),rgb(255, 111, 135));
+            border-radius: 20px 0 0 20px;
+            text-align: center;
+            line-height: 25px;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            transition: width 0.3s ease;
+        }
+/* #ead5d5, #d5a2a2, #f28b8b */
+        .status {
+            font-size: 14px;
+            color: #ff4d4d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Downloading...</h2>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+
+    </div>
+    <h3>0%</h3>
+    <div id="statusText">Ready!</div>
+
+
+
+    <script>
+        let count = 0;
+        let progressBar = document.querySelector('#progressBar')
+        let h3 = document.querySelector("h3");
+        let statusText = document.getElementById('statusText');
+
+
+        setInterval(function () {
+            if (count < 100) {
+                count++;
+                progressBar.style.width = `${count}%`;
+                h3.textContent = `${count}%`;
+                
+            }
+            // progressBar.style.background='linear-gradient(to right, lightpink, pink)'
+            if (count === 100) {
+
+                statusText.textContent = 'Download Complete!';
+            }
+            
+        }, 300)
+
+    </script>
+
+</body>
+
+</html>
